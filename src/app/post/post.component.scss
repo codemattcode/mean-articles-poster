@@ -1,0 +1,34 @@
+$bg: rgba(31,187,212,1);
+$layer-color: rgba(162,244,254,1);
+$font: 'Raleway';
+$dark:rgba(12,15,24,1);
+
+label{
+    color: $dark;
+    font-size: 1.5em 
+}
+input[type="text"], textarea{
+    background: none;
+    border: 1px solid $layer-color;
+    padding: 22px 15px;
+    color: $dark;
+}
+textarea{
+    min-height: 70px;
+}
+.filled{
+    background: $dark;
+    color: $bg;
+    float: left;
+    border-radius: 0;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: $font;
+    font-weight: 700;
+    padding: 12px 22px;
+    margin-top: 40px;
+}
+.alert{
+    margin: -5px 0 20px 0;
+    color:rgba(230,40,101,1);
+}

@@ -25,4 +25,30 @@ router.get('/posts', function(req,res){
         });
 });
 
+router.get('/details/:id', function(req,res){
+    post.findById(req.params.id)
+        .exec(function(err, post){
+            if (err) {
+                console.log('Error getting the post');
+            } else {
+                res.json(post);
+            }
+        });
+});
+
+router.post('/posts', function(req,res){
+    var newPost = new post();
+    newPost.title = req.body.title;
+    newPost.url = req.body.url;
+    newPost.description = req.body.description;
+    newPost.save(function(err, addedPost){
+        if(err){
+            console.log('Error inserting the post')
+        } else {
+            res.json(addedPost);
+        }
+    })
+});
+
+
 module.exports = router;
